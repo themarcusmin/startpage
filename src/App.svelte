@@ -1,33 +1,102 @@
 <script>
-  export let name;
+  import Menu from "./Menu.svelte";
+  import Artwork from "./Artwork.svelte";
+  import DateTime from "./DateTime.svelte";
+  import Google from "./Google.svelte";
+  import Icons from "./Icons.svelte";
+  import Modal from "./Modal.svelte";
 </script>
 
 <main>
-  <h1>Hello, {name}!</h1>
-  <p>
-    Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-    how to build Svelte apps.
-  </p>
+  <Menu />
+  <div class="left_panel">
+    <Artwork />
+  </div>
+  <div class="right_panel">
+    <div class="right_panel_child">
+      <DateTime />
+      <Google />
+      <Icons />
+    </div>
+  </div>
+  <Modal />
 </main>
 
 <style>
+  :global(:root) {
+    --neon-text-color: #ff944d;
+  }
+
   main {
+    background-color: #252525;
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
+    padding: 6em 10em;
+    height: 100%;
+    width: 100vw;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    position: relative;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  .left_panel {
+    width: 30vw;
+    height: 100%;
+    display: flex;
   }
 
-  @media (min-width: 640px) {
+  .right_panel {
+    width: 70vw;
+    height: 100%;
+    display: flex;
+  }
+
+  .right_panel_child {
+    padding: 1em 3em;
+    margin: auto;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
     main {
-      max-width: none;
+      padding: 0;
+    }
+
+    .left_panel {
+      width: 0vw;
+      display: none;
+    }
+
+    .right_panel {
+      width: 100vw;
+    }
+
+    .right_panel_child {
+      width: 100%;
+      padding: 0em 1em;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 1024px) {
+    main {
+      padding: 3em 2em;
+    }
+
+    .right_panel_child {
+      padding: 1em;
+    }
+
+    .left_panel {
+      width: 45vw;
+    }
+
+    .right_panel {
+      width: 55vw;
+    }
+  }
+
+  @media screen and (max-height: 700px) {
+    main {
+      height: auto;
     }
   }
 </style>
