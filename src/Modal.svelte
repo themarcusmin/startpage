@@ -53,9 +53,9 @@
         autofocus
       />
       <div>
-        <button type="button" on:click|preventDefault={handleCloseModal}
-          >Cancel</button
-        >
+        <button type="button" on:click|preventDefault={handleCloseModal}>
+          Cancel
+        </button>
         {#if error.length}
           <p>{error}</p>
         {/if}

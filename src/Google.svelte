@@ -26,7 +26,7 @@
     grid-template-columns: 20% 80%;
     grid-gap: 5px;
     font-size: larger;
-    color: white;
+    color: #999999;
     align-items: center;
     margin: 1.75em 0;
   }

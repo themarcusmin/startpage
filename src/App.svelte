@@ -1,5 +1,5 @@
 <script>
-  import Menu from "./Menu.svelte";
+  import TaskManager from "./TaskManager.svelte";
   import Artwork from "./Artwork.svelte";
   import DateTime from "./DateTime.svelte";
   import Google from "./Google.svelte";
@@ -8,7 +8,7 @@
 </script>
 
 <main>
-  <Menu />
+  <TaskManager />
   <div class="left_panel">
     <Artwork />
   </div>

@@ -38,9 +38,11 @@
           </button>
         {/each}
       {/if}
-      <button class="trigger" on:click={showAddTaskModal}>
-        <IoIosAdd />
-      </button>
+      {#if $tasks.length < 10}
+        <button class="trigger" on:click={showAddTaskModal}>
+          <IoIosAdd />
+        </button>
+      {/if}
     </li>
   {/if}
 </aside>
