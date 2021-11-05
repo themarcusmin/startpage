@@ -68,3 +68,11 @@ button:not(:disabled):active {
 button:focus {
   border-color: #666;
 }
+
+::selection {
+  color: #ffa502;
+}
+
+::-moz-selection {
+  color: #ffa502;
+}
