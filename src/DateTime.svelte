@@ -4,6 +4,13 @@
   let time = new Date();
   let hours_24 = time.getHours();
 
+  let options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  $: date = time.toLocaleDateString("en-US", options);
+
   $: hours_12 = hours_24 % 12 || 12;
   $: minutes = ("0" + time.getMinutes()).slice(-2);
   $: ampm = hours_24 >= 12 ? "PM" : "AM";
@@ -21,7 +28,7 @@
 
 <div class="container">
   <p>{hours_12}: {minutes} {ampm}</p>
-  <p>October 30, 2021</p>
+  <p>{date}</p>
 </div>
 
 <style>
